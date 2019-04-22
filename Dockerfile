@@ -1,10 +1,10 @@
-FROM jenkins/jnlp-slave
+FROM jenkins/jnlp-slave:3.27-1
 
-LABEL maintainer="Deepu Mohan Puthrote <git@deepumohan.com>"
+LABEL maintainer="Chris Yang <chris.yang@spirent.com>"
 
 USER root
 
-ENV PYTHON_VERSION 3.5
+ENV PYTHON_VERSION 3.6
 
 RUN apt-get update \
     && apt-get dist-upgrade -y \
@@ -19,6 +19,6 @@ RUN apt-get update \
        python3-wheel \
        build-essential \
     && rm -rf /var/lib/apt/lists/* \
-    && ln -nsf /usr/bin/python3.5 /usr/bin/python
+    && ln -nsf /usr/bin/python3.6 /usr/bin/python
 
 USER jenkins
