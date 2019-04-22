@@ -4,7 +4,7 @@ LABEL maintainer="Chris Yang <chris.yang@spirent.com>"
 
 USER root
 
-ENV PYTHON_VERSION 3.6
+ENV PYTHON_VERSION 3
 
 RUN apt-get update \
     && apt-get dist-upgrade -y \
@@ -19,6 +19,6 @@ RUN apt-get update \
        python3-wheel \
        build-essential \
     && rm -rf /var/lib/apt/lists/* \
-    && ln -nsf /usr/bin/python3.6 /usr/bin/python
+    && ln -nsf /usr/bin/python3 /usr/bin/python
 
 USER jenkins
